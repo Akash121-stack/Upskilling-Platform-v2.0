@@ -1,5 +1,6 @@
 package com.aiupskillingplatform.entities;
 
+import com.aiupskillingplatform.enums.Role;
 import com.aiupskillingplatform.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -38,6 +39,10 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserStatus status = UserStatus.ACTIVE;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role = Role.USER;
 
     private Instant createdAt = Instant.now();
 
